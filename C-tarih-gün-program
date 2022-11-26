@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<locale.h>
+#include<math.h>
+int main()
+{
+setlocale(LC_CTYPE,"Turkish");
+    int gun,ay,yil;
+    int x,y;
+    printf("Tarih giriniz (Gün Ay Yıl): ");
+    scanf("%d %d %d",&gun,&ay,&yil);
+    if(ay<=2){
+        x=yil-1;
+        y=ay+13;
+        int n=1461*x/4+ 153*y/5+gun -621049;
+        switch(n%7){
+            case 0: printf("O gün Pazardı"); break;
+            case 1: printf("O gün Pazartesiydi"); break;
+            case 2: printf("O gün Salıydı"); break;
+            case 3: printf("O gün Çarşambaydı"); break;
+            case 4: printf("O gün Perşembeydi"); break;
+            case 5: printf("O gün Cumaydı"); break;
+            case 6: printf("O gün Cumartesiydi"); break;
+        }
+    }
+    else if(ay>2){
+        y=ay+1;
+        x=yil;
+        int n=1461*x/4+ 153*y/5+gun -621049;
+        printf("%d\n",n);
+        switch(n%7){
+            case 0: printf("O gün Pazardı"); break;
+            case 1: printf("O gün Pazartesiydi"); break;
+            case 2: printf("O gün Salıydı"); break;
+            case 3: printf("O gün Çarşambaydı"); break;
+            case 4: printf("O gün Perşembeydi"); break;
+            case 5: printf("O gün Cumaydı"); break;
+            case 6: printf("O gün Cumartesiydi"); break;
+        }   
+    }
+}
