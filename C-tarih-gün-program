@@ -26,7 +26,6 @@ setlocale(LC_CTYPE,"Turkish");
         y=ay+1;
         x=yil;
         int n=1461*x/4+ 153*y/5+gun -621049;
-        printf("%d\n",n);
         switch(n%7){
             case 0: printf("O gün Pazardı"); break;
             case 1: printf("O gün Pazartesiydi"); break;
